@@ -1,0 +1,32 @@
+name: Crimea Spring2022
+slug: crimea-spring2022
+type: theme
+version: 0.1.0
+description: Crimea Spring 2022
+icon: rebel
+author:
+  name: Sevastian Nikiforov
+  email: yalta.kgu.tech@gmail.com
+homepage: https://github.com/yalta-kgu-tech/grav-theme-crimea-spring2022
+demo: http://demo.yoursite.com
+keywords: grav, theme, etc
+bugs: https://github.com/yalta-kgu-tech/grav-theme-crimea-spring2022/issues
+readme: https://github.com/yalta-kgu-tech/grav-theme-crimea-spring2022/blob/develop/README.md
+license: MIT
+
+dependencies:
+  - { name: grav, version: '>=1.6.0' }
+
+form:
+  validation: loose
+  fields:
+    dropdown.enabled:
+        type: toggle
+        label: Dropdown in Menu
+        highlight: 1
+        default: 1
+        options:
+          1: PLUGIN_ADMIN.ENABLED
+          0: PLUGIN_ADMIN.DISABLED
+        validate:
+          type: bool
