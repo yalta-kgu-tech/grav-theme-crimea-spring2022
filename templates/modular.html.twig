@@ -1,0 +1,25 @@
+{% extends 'partials/main.html.twig' %}
+
+{% block filename %}
+	<p>modular.html.twig</p>
+{% endblock %}
+
+{% block content %}
+	<p>All modules</p>
+	{% for module in page.collection() %}
+		{{ module.content|raw }}
+	{% endfor %}
+{% endblock %}
+
+{% block intro %}
+    {% for module in page.collection() if module.template == 'modular/intro' %}
+        {{ module.content|raw }}
+    {% endfor %}
+{% endblock %}
+
+{% block welcome %}
+    {% for module in page.collection() if module.template == 'modular/welcome' %}
+        {{ module.content|raw }}
+    {% endfor %}
+{% endblock %}
+

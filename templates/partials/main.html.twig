@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="{{ grav.language.getActive ?: grav.config.site.default_lang }}">
+
+<head>
+{% block head deferred %}
+        <meta charset="utf-8">
+	<title>{% if page.title %}{{ page.title|e('html') }} | {% endif %}{{ site.title|e('html') }}</title>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+	{% include 'partials/metadata.html.twig' %}
+	
+	<link rel="icon" type="image/png" href="{{ url('theme://images/favicon.png') }}" />
+	<link rel="canonical" href="{{ page.url(true, true) }}" />
+{% endblock head %}
+
+{% block uikit0links %}
+	{% do assets.addCss('theme://vendor/uikit/css/uikit.min.css') %}
+	{% do assets.addJs('theme://vendor/uikit/js/uikit.min.js') %}
+	{% do assets.addJs('theme://vendor/uikit/js/uikit-icons.min.js') %}
+{% endblock %}
+
+{% block assets deferred %}
+    {{ assets.css()|raw }}
+    {{ assets.js()|raw }}
+{% endblock %}
+</head>
+
+<body>
+{% block messages %}
+	{% include 'partials/messages.html.twig' ignore missing %}
+{% endblock %}
+
+{% block filename %}{% endblock %}
+
+{% block content %}{% endblock %}
+
+</body>
+
+</html>
