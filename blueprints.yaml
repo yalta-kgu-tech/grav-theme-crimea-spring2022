@@ -30,3 +30,53 @@ form:
           0: PLUGIN_ADMIN.DISABLED
         validate:
           type: bool
+
+columns:
+  type: columns
+  fields:
+    column1:
+      type: column
+      fields:
+        color.primary:
+          type: colorpicker
+          label: Primary color
+          help:
+      fields:
+        color.tertiary:
+          type: colorpicker
+          label: Tertiary color
+
+    column2:
+      type: column
+      fields:
+        color.secondary:
+          type: colorpicker
+          label: Secondary color
+        color.quaternary:
+          type: colorpicker
+          label: Quaternary color
+
+header.fieldset:
+  type: fieldset
+  title: Main page elements
+  help: Help text
+  info: Info text
+  text: Text inside fieldset and before other fields
+  icon: comments       # Fork Awesome icons system (see : forkaweso.me).
+  collapsed: true      # Initial state of fieldset (see collapsible option)
+  collapsible: true    # Whether one can expand the fieldset or not
+  fields:
+    upload.intro.bg:
+      type: file
+      label: Background 4 inro(upload)
+      destination: 'theme://images/bg'
+      accept:
+        - image/*
+    select.intro.bg:
+      type: filepicker
+      folder: 'theme://images/bg'
+      label: Background 4 inro(select)
+      preview_images: true
+      accept:
+        - .png
+        - .jpg
