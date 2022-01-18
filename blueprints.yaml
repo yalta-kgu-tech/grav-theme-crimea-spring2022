@@ -41,7 +41,6 @@ columns:
           type: colorpicker
           label: Primary color
           help:
-      fields:
         color.tertiary:
           type: colorpicker
           label: Tertiary color
