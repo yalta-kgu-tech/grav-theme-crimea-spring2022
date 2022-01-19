@@ -1,9 +1,59 @@
 {% include 'partials/csscolors.html.twig' %}
+
 {% block content %}
-	<div class="uk-section">
-		<div class="uk-container">
-			<h1 class="color-primary">Hello world!</h1>
-			{{ page.content|raw }}
-		</div>
+<style media="screen">
+section#intro{
+	background-color: #090548;
+}
+.intro-bg{
+	background-image: url('{{ base_url_absolute }}/{{ theme_url }}/images/bg/{{grav.theme.config.select.intro.bg}}');
+	background-position: center;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: contain;
+}
+
+.intro-size{
+	width: 100%;
+	height: 100vh;
+}
+
+a.uk-button-large{
+	font-size: 18px;
+	font-weight: bold;
+}
+
+</style>
+
+<section id="intro">
+	<div class="uk-container">
+		<section class="intro-size intro-bg color-bg-tertiary">
+			<div class="uk-section">
+				<div uk-countdown="date: 2022-04-19T10:00:00+03:00">
+    			<span class="uk-countdown-number uk-countdown-days"></span>
+    			<span class="uk-countdown-separator">:</span>
+    			<span class="uk-countdown-number uk-countdown-hours"></span>
+    			<span class="uk-countdown-separator">:</span>
+    			<span class="uk-countdown-number uk-countdown-minutes"></span>
+    			<span class="uk-countdown-separator">:</span>
+    			<span class="uk-countdown-number uk-countdown-seconds"></span>
+				</div>
+			</div>
+
+			<div class="uk-section uk-position-bottom">
+				<div class="uk-child-width-expand" uk-grid>
+    			<div>&nbsp;</div>
+					<div>
+						<a class="uk-button uk-button-primary uk-button-large uk-align-center" href="#welcome"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;Узнать больше</a>
+					</div>
+					<div>
+						<a class="uk-button uk-button-primary uk-button-large uk-align-center" href="{{grav.theme.config.registration.form.url}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Стать участником</a>
+					</div>
+    			<div>&nbsp;</div>
+				</div>
+			</div>
+		</section>
 	</div>
+</section>
+
 {% endblock %}

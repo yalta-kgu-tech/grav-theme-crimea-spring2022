@@ -76,3 +76,7 @@ form:
           accept:
             - .png
             - .jpg
+        registration.form.url:
+          type: url
+          label: 'Registration form URL'
+          maxlength: 120
