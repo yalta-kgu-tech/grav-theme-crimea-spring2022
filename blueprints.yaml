@@ -76,6 +76,9 @@ form:
           accept:
             - .png
             - .jpg
+        start.date:
+          type: date
+          label: Festival start at
         registration.form.url:
           type: url
           label: 'Registration form URL'

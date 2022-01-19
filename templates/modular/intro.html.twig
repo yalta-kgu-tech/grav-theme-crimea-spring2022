@@ -28,17 +28,35 @@ a.uk-button-large{
 <section id="intro">
 	<div class="uk-container">
 		<section class="intro-size intro-bg color-bg-tertiary">
+			{% set now = date() %}
+			{% set %}
+			{% if now <= grav.theme.config.start.date %}
 			<div class="uk-section">
-				<div uk-countdown="date: 2022-04-19T10:00:00+03:00">
-    			<span class="uk-countdown-number uk-countdown-days"></span>
+				<div class="uk-grid-small uk-child-width-auto" uk-countdown="date: 2022-04-19T10:00:00+03:00">
+					<p>До открытия осталось </p>
+					<div>
+						<span class="uk-countdown-number uk-countdown-days"></span>
+						<div class="uk-countdown-label">Дней</div>
+					</div>
     			<span class="uk-countdown-separator">:</span>
-    			<span class="uk-countdown-number uk-countdown-hours"></span>
-    			<span class="uk-countdown-separator">:</span>
-    			<span class="uk-countdown-number uk-countdown-minutes"></span>
-    			<span class="uk-countdown-separator">:</span>
-    			<span class="uk-countdown-number uk-countdown-seconds"></span>
+					<div>
+						<span class="uk-countdown-number uk-countdown-hours"></span>
+						<div class="uk-countdown-label">Часов</div>
+					</div>
+					<span class="uk-countdown-separator">:</span>
+					<div>
+						<span class="uk-countdown-number uk-countdown-minutes"></span>
+						<div class="uk-countdown-label">Минут</div>
+					</div>
+					<span class="uk-countdown-separator">:</span>
+					<div>
+						<span class="uk-countdown-number uk-countdown-seconds"></span>
+						<div class="uk-countdown-label">Секунд</div>
+					</div>
 				</div>
 			</div>
+			{% else %}
+			{% endif %}
 
 			<div class="uk-section uk-position-bottom">
 				<div class="uk-child-width-expand" uk-grid>
