@@ -1,0 +1,10 @@
+{% block css.colors %}
+<style media="screen">
+:root{
+  --primary-color: {{grav.theme.config.color.primary}}
+}
+  .color-primary{
+    color: var(--primary-color);
+  }
+</style>
+{% endblock %}
