@@ -1,10 +1,20 @@
 {% block css.colors %}
 <style media="screen">
 :root{
-  --primary-color: {{grav.theme.config.color.primary}}
+  --primary-color: {{grav.theme.config.color.primary}};
+  --secondary-color:{{grav.theme.config.color.secondary}};
+  --tertiary-color:{{grav.theme.config.color.tertiary}};
+  --quaternary-color:{{grav.theme.config.color.quaternary}};
 }
-  .color-primary{
-    color: var(--primary-color);
-  }
+
+.color-primary{ color: var(--primary-color); }
+.color-secondary{ color: var(--secondary-color); }
+.color-tertiary{ color: var(--tertiary-color); }
+.color-quaternary{ color: var(--quaternary-color); }
+
+.color-bg-primary{background-color: var(--primary-color);}
+.color-bg-secondary{background-color: var(--secondary-color);}
+.color-bg-tertiary{background-color: var(--tertiary-color);}
+.color-bg-quaternary{background-color: var(--quaternary-color);}
 </style>
 {% endblock %}
