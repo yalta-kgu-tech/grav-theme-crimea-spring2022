@@ -5,7 +5,7 @@
 section#intro{
 	background-color: #090548;
 }
-.intro-bg{
+.intro-bg-img{
 	background-image: url('{{ base_url_absolute }}/{{ theme_url }}/images/bg/{{grav.theme.config.select.intro.bg}}');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -23,35 +23,44 @@ a.uk-button-large{
 	font-weight: bold;
 }
 
+#countdown-label{
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 120%;
+}
+
 </style>
 
 <section id="intro">
 	<div class="uk-container">
-		<section class="intro-size intro-bg color-bg-tertiary">
-			{% set now = date() %}
-			{% set %}
+		<div class="uk-cover-container intro-size color-bg-tertiary">
+			<img src="{{ base_url_absolute }}/{{ theme_url }}/images/bg/{{grav.theme.config.select.intro.bg}}" alt="" uk-cover>
+			{% set now = now|date("d.m.Y") %}
 			{% if now <= grav.theme.config.start.date %}
-			<div class="uk-section">
-				<div class="uk-grid-small uk-child-width-auto" uk-countdown="date: 2022-04-19T10:00:00+03:00">
-					<p>До открытия осталось </p>
+			<div class="uk-section uk-position-top">
+				<div class="uk-grid-small uk-child-width-auto uk-margin-left" uk-grid uk-countdown="date: {{grav.theme.config.start.date}}T10:00:00+03:00">
+					<div>
+						<p id="countdown-label" class="uk-text-center">До<br>открытия<br>осталось</p>
+					</div>
 					<div>
 						<span class="uk-countdown-number uk-countdown-days"></span>
-						<div class="uk-countdown-label">Дней</div>
+						<div class="uk-countdown-label uk-text-center">Дней</div>
 					</div>
-    			<span class="uk-countdown-separator">:</span>
+					<span class="uk-countdown-separator">:</span>
 					<div>
 						<span class="uk-countdown-number uk-countdown-hours"></span>
-						<div class="uk-countdown-label">Часов</div>
+						<div class="uk-countdown-label uk-text-center">Часов</div>
 					</div>
 					<span class="uk-countdown-separator">:</span>
 					<div>
 						<span class="uk-countdown-number uk-countdown-minutes"></span>
-						<div class="uk-countdown-label">Минут</div>
+						<div class="uk-countdown-label uk-text-center">Минут</div>
 					</div>
 					<span class="uk-countdown-separator">:</span>
 					<div>
 						<span class="uk-countdown-number uk-countdown-seconds"></span>
-						<div class="uk-countdown-label">Секунд</div>
+						<div class="uk-countdown-label uk-text-center">Секунд</div>
 					</div>
 				</div>
 			</div>
@@ -59,18 +68,17 @@ a.uk-button-large{
 			{% endif %}
 
 			<div class="uk-section uk-position-bottom">
-				<div class="uk-child-width-expand" uk-grid>
-    			<div>&nbsp;</div>
-					<div>
+				<div class="uk-position-center" uk-grid>
+					<div class="uk-with-2-5">
 						<a class="uk-button uk-button-primary uk-button-large uk-align-center" href="#welcome"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;Узнать больше</a>
 					</div>
-					<div>
+					<div class="uk-with-1-5">&nbsp;</div>
+					<div class="uk-with-2-5">
 						<a class="uk-button uk-button-primary uk-button-large uk-align-center" href="{{grav.theme.config.registration.form.url}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>&nbsp;Стать участником</a>
 					</div>
-    			<div>&nbsp;</div>
 				</div>
 			</div>
-		</section>
+		</div>
 	</div>
 </section>
 
