@@ -12,12 +12,13 @@
 {% block anchor %}
 <a name="welcome"></a>
 {% endblock %}
-
+{% include 'partials/navigation.html.twig' %}
 {% block content %}
 	<section id="welcome">
 		<div class="uk-container">
 			<section class="welcome-size">
 				<h1>{{page.header.title}}</h1>
+				{{page.content|raw}}
 			</section>
 		</div>
 	</section>
